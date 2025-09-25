@@ -4,3 +4,16 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+axum = { version = "0.8.4"}
+bcrypt = "0.17.1"
+jsonwebtoken = "9.3.1"
+tokio = { version = "1.47.1", features = ["full"] }
+
+store = { path = "../store" }
+serde = "1.0.226"
+serde_json = "1.0.145"
+dotenvy = "0.15.7"
+chrono = "0.4.42"
+uuid = "1.18.1"
+thiserror = "2.0.16"
+axum-extra = {version = "0.10.1", features = ["typed-header"]}

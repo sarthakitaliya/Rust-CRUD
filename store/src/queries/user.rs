@@ -17,4 +17,11 @@ impl Store {
     pub fn get_user_by_id(&mut self, uid: Uuid) -> QueryResult<Option<User>> {
         users.find(uid).first::<User>(&mut self.conn).optional()
     }
+
+    pub fn get_user_by_email(&mut self, _email: &str) -> QueryResult<Option<User>> {
+        users
+            .filter(email.eq(_email))
+            .first::<User>(&mut self.conn)
+            .optional()
+    }
 }

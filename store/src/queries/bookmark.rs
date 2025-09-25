@@ -30,4 +30,8 @@ impl Store {
     pub fn delete_bookmark(&mut self, bid: Uuid) -> QueryResult<Bookmark> {
         diesel::delete(bookmark.find(bid)).get_result(&mut self.conn)
     }
+
+    pub fn get_bookmark(&mut self, bid: Uuid) -> QueryResult<Bookmark> {
+        bookmark.find(bid).get_result(&mut self.conn)
+    }
 }

@@ -18,10 +18,10 @@ pub struct Bookmark {
 
 #[derive(Insertable)]
 #[diesel(table_name = bookmark)]
-pub struct NewBookmark<'a> {
-    pub user_id: Option<Uuid>,
-    pub title: &'a str,
-    pub url: &'a str,
-    pub description: Option<&'a str>,
+pub struct NewBookmark {
+    pub user_id: Uuid,
+    pub title: String,
+    pub url: String,
+    pub description: Option<String>,
     pub is_favorite: Option<bool>,
 }
